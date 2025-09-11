@@ -27,22 +27,22 @@
             <p>Наши телефоны</p>
             <a href="#contacts">Связаться с нами</a>
         </section>
-        
+
         <section id="contacts">
             <h2>Наши соц.сети</h2>
             <p>Наши контакты: ...</p>
         </section>
 
         <h1>Форма обратной связи</h1>
-        <form>
+        <form id="ContactForm">
             <label for="username">Ваше имя:</label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="username" name="username" required>
 
             <label for="phone">Ваш номер телефона:</label>
-            <input type="text" id="phone" name="phone">
+            <input type="text" id="phone" name="phone" required>
 
             <label for="email">Ваш email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
 
             <label for="cource">Ваш курс:</label>
             <select name="cource" id="cource">
@@ -55,7 +55,7 @@
             </select>
 
             <label for="message">Ваше обращение:</label>
-            <textarea name="message" id="message" rows="6"></textarea>
+            <textarea name="message" id="message" rows="6" required></textarea>
 
             <button type="submit" id="submit" name="submit">Отправить</button>
 

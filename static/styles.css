@@ -32,9 +32,9 @@ input:focus {
 }
 button {
     padding: 5px;
-    border: 3px solid greenyellow;
+    border: 3px solid purple;
     border-radius: 10px;
-    background-color: greenyellow;
+    background-color: purple;
     color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.3s;
@@ -43,5 +43,13 @@ button {
 button:hover {
     background-color: aliceblue;
     color: purple;
+}
+
+#ContactForm {
+    border: 3px solid purple;
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 10px;
+    max-width: 250px;
 }
 
