@@ -53,3 +53,10 @@ button:hover {
     max-width: 250px;
 }
 
+.error {
+    border: 3px solid red;
+    border-radius: 10px;
+    background-color: lightcoral;
+    color: black;
+
+}
