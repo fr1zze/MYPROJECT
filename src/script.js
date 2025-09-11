@@ -5,7 +5,7 @@ emailInput.addEventListener('input',validateEmail); // на событие вв�
 
 function validateEmail() { // функция проверки коректности email
 
-    const emailRegex = /[A-Za-z0-9_-\.]{2,10}@[a-z0-9\.-_]{1,10}\.[a-z]{2,3}/;
+    const emailRegex = /[A-Za-z0-9_\-\.]{2,10}@[a-z0-9\.\-_]{1,10}\.[a-z]{2,3}/;
     if(emailRegex.test(emailInput.value))
     {
         removeError(emailInput);
@@ -24,7 +24,7 @@ function showError(input, message) { // функция показа ошибки
     const formControl = input.parentElement; // получаем родительскую форму
     const errorElement = formControl.querySelector('.error') || document.createElement('div');
 
-    errorElement.class = 'error'; 
+    errorElement.className = 'error'; 
     errorElement.textContent = message;
 
     formControl.appendChild(errorElement);
