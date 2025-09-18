@@ -60,3 +60,142 @@ button:hover {
     color: black;
 
 }
+
+
+:root {
+    /* Палитра */
+    --color-bg:#fff; --color-fg:#000000; --color-muted:#666;
+    --color-primary:#0a84ff; --color-danger:#b00020;
+    /* Типографика и размеры */
+    --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
+    /* Скругления и тени */
+    --radius:12px;
+    --shadow:0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(248, 246, 246, 0.08);
+}
+/* Тёмная тема: переопределяем только значения токенов */
+body.theme-dark {
+    --color-bg:#e9f3dd; --color-fg:#000000; --color-muted:#aaa;
+    --color-primary:#6aa2ff;
+}
+
+a:link {
+
+} 
+
+a:visited {
+
+} 
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
+/* :where(...) не добавляет специфичности — проще переопределять позже */
+:where(a,button,input,select,textarea):focus-visible {
+    outline:2px solid var(--color-primary);
+    outline-offset:2px;
+}
+
+/* Недоступные элементы визуально «приглушаем» */
+:disabled,[aria-disabled="true"] {
+    opacity:.6;cursor:not-allowed;
+}
+
+/* Плавная прокрутка к #якорю */
+html { 
+    scroll-behavior:smooth; 
+}
+
+/* Подсветка цели */
+:target { 
+    outline:2px dashed var(--color-primary); outline-offset:4px; 
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+html,body {  
+    margin:0; padding:0; 
+}
+
+body {
+    background:var(--color-bg);
+    color:var(--color-fg);
+    font-family:var(--font-body);
+    line-height:1.5;
+}
+
+/* Центровка и ограничение ширины контейнера */
+.container { 
+    width:min(100% - 2*var(--space-4), 1120px); margin-inline:auto; 
+}
+
+/* Вертикальные отступы секций по токенам */
+.section { 
+    padding-block:var(--space-5); 
+}
+
+.section__title { 
+    margin:0 0 var(--space-3); 
+}
+
+/* Антипаттерн: селектор тяжёлый и хрупкий */
+#header .menu .item a {
+     color:#333; 
+}
+
+/* Хорошо: опора на БЭМ-класс компонента */
+.site-nav__link { 
+    color:var(--color-fg); 
+}
+
+/* Проще считать ширины/высоты */
+* {
+     box-sizing:border-box; 
+}
+
+html,body {
+     margin:0; padding:0; 
+}
+
+/* Медиа не «выпрыгивают» из контейнеров */
+img,video {
+     max-width:100%; height:auto; display:block; 
+}
+
+/* Форм-контролы наследуют шрифт и цвет */
+button,input,select,textarea {
+     font:inherit; color:inherit; 
+}
+
+/* Изображение в карточке заполняет блок и не искажает пропорции */
+.card__img {
+    width:100%; height:220px; /* фиксируем высоту карточки */
+    object-fit:cover; object-position:center; /* аккуратное кадрирование */
+    border-radius:var(--radius); display:block;
+}
+
+.hero {
+    background-image:
+    linear-gradient(to top, rgba(255, 4, 4, 0.55), rgb(230, 0, 0)),
+    image-set(url("http://127.0.0.1:5500/src/img/tower.jpeg") 1x,url("http://127.0.0.1:5500/src/img/tower.jpeg") 2x);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.media {
+    aspect-ratio: 16/9; /* удерживаем пропорцию блока */
+    width: min(100%, 960px); /* не шире 960px, но адаптивен */
+    margin-inline: auto; /* центрируем блок */
+}
+.media iframe,.media video {
+    width:100%; height:100%; /* медиа занимает всю площадь контейнера */
+    border:0; border-radius:var(--radius);
+}
