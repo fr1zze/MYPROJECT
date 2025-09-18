@@ -27,14 +27,14 @@ input {
 }
 
 input:focus {
-    background-color: rgb(17, 0, 255);
+    background-color: rgb(109, 218, 226);
 
 }
 button {
     padding: 5px;
-    border: 3px solid purple;
+    border: 3px solid pink;
     border-radius: 10px;
-    background-color: purple;
+    background-color: pink;
     color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.3s;
@@ -42,11 +42,11 @@ button {
 
 button:hover {
     background-color: aliceblue;
-    color: purple;
+    color: black;
 }
 
 #ContactForm {
-    border: 3px solid purple;
+    border: 3px solid pink;
     border-radius: 10px;
     background-color: aliceblue;
     padding: 10px;
