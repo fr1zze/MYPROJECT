@@ -13,4 +13,4 @@
 Тут будут описаны возможности
 
 ## Ссылка на сайт
-Ссылка: ....
+Ссылка: https://fr1zze.github.io/MYPROJECT/src/index.html
